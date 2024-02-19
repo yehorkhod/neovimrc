@@ -2,6 +2,11 @@
 
 ## Requirements
 - NeoVim (Obviously)
-- Git to run `git clone --depth 1 https://github.com/yehorkhod/neovimrc.git`
+- Git
 - Python, so python lsp doesn't argue
-- Zig was chosen as a Treesitter compiler -> zig must be installed
+- LatexMK to use LaTeX
+- Zig (was chosen as a Treesitter compiler)
+
+## For those who want to try this nvim config
+Run `git clone https://github.com/yehorkhod/neovimrc.git .` into your **empty** `\nvim` folder.
+

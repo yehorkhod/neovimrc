@@ -6,7 +6,7 @@ return {
         require('nvim-treesitter.install').compilers = { 'zig' }
 
         require('nvim-treesitter.configs').setup({
-            ensure_installed = { 'python', 'lua', 'zig' },
+            ensure_installed = { 'python', 'lua', 'zig', 'latex' },
             sync_install = false,
             auto_install = true,
             highlight = {
