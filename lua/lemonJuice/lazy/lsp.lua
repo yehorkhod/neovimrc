@@ -12,9 +12,8 @@ return {
         config = function()
             require('mason-lspconfig').setup({
                 ensure_installed = {
-                    'zls',
                     'lua_ls',
-                    'ruff_lsp'
+                    'jedi_language_server'
                 }
             })
         end
@@ -24,12 +23,12 @@ return {
 
         config = function()
             local lspconfig = require('lspconfig')
-            lspconfig.lua_ls.setup({})
-            lspconfig.zls.setup({})
-            lspconfig.ruff_lsp.setup({})
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            lspconfig.lua_ls.setup({ capabilities = capabilities })
+            lspconfig.jedi_language_server.setup({ capabilities = capabilities })
 
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
         end
     }
 }
