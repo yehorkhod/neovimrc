@@ -13,7 +13,7 @@ return {
             require('mason-lspconfig').setup({
                 ensure_installed = {
                     'lua_ls',
-                    'jedi_language_server'
+                    'pyright'
                 }
             })
         end
@@ -25,10 +25,10 @@ return {
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             lspconfig.lua_ls.setup({ capabilities = capabilities })
-            lspconfig.jedi_language_server.setup({ capabilities = capabilities })
+            lspconfig.pyright.setup({ capabilities = capabilities })
 
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+            vim.keymap.set('n', 'si', vim.lsp.buf.hover)
         end
     }
 }

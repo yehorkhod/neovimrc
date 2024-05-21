@@ -3,10 +3,8 @@ return {
     build = ':TSUpdate',
 
     config = function()
-        require('nvim-treesitter.install').compilers = { 'zig' }
-
         require('nvim-treesitter.configs').setup({
-            ensure_installed = { 'python', 'lua', 'zig', 'latex' },
+            ensure_installed = { 'python', 'lua', 'latex' },
             sync_install = false,
             auto_install = true,
             highlight = {

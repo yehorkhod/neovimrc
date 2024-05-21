@@ -3,7 +3,7 @@ require('lemonJuice')
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
         -- path to .env file
-        local path = 'C:/Users/ekhod/AppData/Local/nvim/.env'
+        local path = vim.fn.stdpath('config') .. '/.env'
         local file = assert(io.open(path, 'r'))
         local content = file:read('*all')
         file:close()
