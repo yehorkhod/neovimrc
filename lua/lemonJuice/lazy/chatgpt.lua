@@ -11,7 +11,9 @@ return {
     config = function()
         require("chatgpt").setup({
             openai_params = {
-                max_tokens = 1028
+                model = 'gpt-4o',
+                max_tokens = 4095,
+                temperature = 0.2
             },
             vim.keymap.set('n', '<leader>C', vim.cmd.ChatGPT)
         })
