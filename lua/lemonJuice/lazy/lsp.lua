@@ -15,6 +15,7 @@ return {
                     'lua_ls',
                     'pyright',
                     'r_language_server',
+                    'clojure_lsp',
                 }
             })
         end
@@ -28,9 +29,11 @@ return {
             lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.pyright.setup({ capabilities = capabilities })
             lspconfig.r_language_server.setup({ capabilities = capabilities })
+            lspconfig.clojure_lsp.setup({ capabilities = capabilities })
 
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
             vim.keymap.set('n', 'si', vim.lsp.buf.hover)
+            vim.keymap.set('n', 'K', vim.lsp.buf.signature_help)
         end
     }
 }
